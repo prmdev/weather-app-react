@@ -24224,7 +24224,7 @@
 	"use strict";
 
 	module.exports = {
-	    ROOT_URL: "http://api.openweathermap.org/data/2.5/forecast?appid=22ae08bef8b3a7a9d81a372bc7eecb8d"
+	    ROOT_URL: "https://api.openweathermap.org/data/2.5/forecast?appid=22ae08bef8b3a7a9d81a372bc7eecb8d"
 	};
 
 /***/ }),
