@@ -73,7 +73,7 @@
 
 	var _app2 = _interopRequireDefault(_app);
 
-	var _reducers = __webpack_require__(241);
+	var _reducers = __webpack_require__(240);
 
 	var _reducers2 = _interopRequireDefault(_reducers);
 
@@ -24249,10 +24249,6 @@
 
 	var _chart2 = _interopRequireDefault(_chart);
 
-	var _google_map = __webpack_require__(240);
-
-	var _google_map2 = _interopRequireDefault(_google_map);
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -24273,7 +24269,7 @@
 	    _createClass(WeatherList, [{
 	        key: 'renderWeather',
 	        value: function renderWeather(cityData) {
-
+	            var name = cityData.city.name;
 	            var temps = cityData.list.map(function (weather) {
 	                return weather.main.temp;
 	            });
@@ -24290,11 +24286,11 @@
 
 	            return _react2.default.createElement(
 	                'tr',
-	                { key: cityData.city.name },
+	                { key: name },
 	                _react2.default.createElement(
 	                    'td',
 	                    null,
-	                    _react2.default.createElement(_google_map2.default, { lon: lon, lat: lat })
+	                    name
 	                ),
 	                _react2.default.createElement(
 	                    'td',
@@ -37851,62 +37847,6 @@
 /* 240 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(2);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var GoogleMap = function (_Component) {
-	    _inherits(GoogleMap, _Component);
-
-	    function GoogleMap() {
-	        _classCallCheck(this, GoogleMap);
-
-	        return _possibleConstructorReturn(this, (GoogleMap.__proto__ || Object.getPrototypeOf(GoogleMap)).apply(this, arguments));
-	    }
-
-	    _createClass(GoogleMap, [{
-	        key: "componentDidMount",
-	        value: function componentDidMount() {
-	            new google.maps.Map(this.refs.map, {
-	                zoom: 12,
-	                center: {
-	                    lat: this.props.lat,
-	                    lng: this.props.lon
-	                }
-	            });
-	        }
-	    }, {
-	        key: "render",
-	        value: function render() {
-	            return _react2.default.createElement("div", { ref: "map" });
-	        }
-	    }]);
-
-	    return GoogleMap;
-	}(_react.Component);
-
-	exports.default = GoogleMap;
-
-/***/ }),
-/* 241 */
-/***/ (function(module, exports, __webpack_require__) {
-
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
@@ -37915,7 +37855,7 @@
 
 	var _redux = __webpack_require__(166);
 
-	var _reducer_weather = __webpack_require__(242);
+	var _reducer_weather = __webpack_require__(241);
 
 	var _reducer_weather2 = _interopRequireDefault(_reducer_weather);
 
@@ -37928,7 +37868,7 @@
 	exports.default = rootReducer;
 
 /***/ }),
-/* 242 */
+/* 241 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
